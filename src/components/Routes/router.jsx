@@ -1,17 +1,15 @@
-import React from 'react';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import App from '../../App';
-import NavigationBar from '../Shared/NavigationBar';
-import Home from '../Home/Home';
-import Layout from '../Layout/Layout';
-import Blog from '../Blog/Blog';
-import Destination from '../Destination/Destination';
-import Booking from '../Booking/Booking';
-import Login from '../Login/Login/Login';
-import Register from '../Login/Register/Register';
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import App from "../../App";
+import NavigationBar from "../Shared/NavigationBar";
+import Home from "../Home/Home";
+import Layout from "../Layout/Layout";
+import Blog from "../Blog/Blog";
+import Destination from "../Destination/Destination";
+import Booking from "../Booking/Booking";
+import Login from "../Login/Login/Login";
+import Register from "../Login/Register/Register";
+import Hotels from "../Hotels/Hotels";
 
 const router = createBrowserRouter([
   {
@@ -19,30 +17,38 @@ const router = createBrowserRouter([
     element: <Layout></Layout>,
     children: [
       {
-        path: '/',
-        element: <Home></Home>
-      },{
-        path: 'blog',
-        element: <Blog></Blog>
+        path: "/",
+        element: <Home></Home>,
       },
       {
-        path: 'allDestination',
+        path: "blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "allDestination",
         element: <Destination></Destination>,
-        loader: ()=> fetch('http://localhost:3000/allDestination')
+        loader: () => fetch("http://localhost:3000/allDestination"),
       },
       {
-        path: 'destination/:id',
-        element: <Booking></Booking>
+        path: "allDestination/:id",
+        element: <Booking></Booking>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/allDestination/${params.id}`),
       },
       {
-        path: 'login',
-        element: <Login></Login>
+        path: "hotels",
+        element: <Hotels></Hotels>,
+        
       },
       {
-        path: 'register',
-        element: <Register></Register>
-      }
-    ]
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "register",
+        element: <Register></Register>,
+      },
+    ],
   },
 ]);
 

@@ -4,6 +4,7 @@ import "./Home.css";
 import sundorbon from "../../assets/images/slider/sundorbon.png";
 import sreemongol from "../../assets/images/slider/Sreemongol.png";
 import sajek from "../../assets/images/slider/Sajek.png";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -17,7 +18,11 @@ const Home = () => {
           people to explore the world, creating lasting connections and a more
           connected global community.
         </p>
-        <button className="btn">See Destination</button>
+        <button className="btn">
+          <Link to='/allDestination'>
+          See Destination
+          </Link>
+          </button>
       </div>
 
       {/* slider */}

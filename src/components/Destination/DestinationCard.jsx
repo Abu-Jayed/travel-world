@@ -16,7 +16,7 @@ const DestinationCard = (props) => {
               <h1 className="text-3xl font-bold">{name}</h1>
               <p className="py-6">{description}</p>
               <Link
-                to={`/destination/${id}`}
+                to={`/allDestination/${id}`}
                 className="btn btn-warning normal-case"
               >
                 Booking
