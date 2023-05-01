@@ -19,21 +19,21 @@ const NavigationBar = () => {
         </div>
         <ul className="font-bold text-[18px] menu menu-horizontal px-1">
           <li>
-            <Link to='/' className="active:bg-red-400 ">Home</Link>
+            <NavLink to='/' className="active:bg-red-400 ">Home</NavLink>
           </li>
           <li>
-            <Link>Destination</Link>
+            <NavLink to='allDestination'>Destination</NavLink>
           </li>
           <li>
-            <Link>Blog</Link>
+            <NavLink to='blog'>Blog</NavLink>
           </li>
           <li>
-            <Link>Contact</Link>
+            <NavLink to='/'>Contact</NavLink>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn rounded-lg">Login</a>
+        <Link to='login' className="btn rounded-lg">Login</Link>
       </div>
     </div>
   );

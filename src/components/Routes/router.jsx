@@ -9,6 +9,9 @@ import Home from '../Home/Home';
 import Layout from '../Layout/Layout';
 import Blog from '../Blog/Blog';
 import Destination from '../Destination/Destination';
+import Booking from '../Booking/Booking';
+import Login from '../Login/Login/Login';
+import Register from '../Login/Register/Register';
 
 const router = createBrowserRouter([
   {
@@ -23,8 +26,21 @@ const router = createBrowserRouter([
         element: <Blog></Blog>
       },
       {
-        path: 'destination',
-        element: <Destination></Destination>
+        path: 'allDestination',
+        element: <Destination></Destination>,
+        loader: ()=> fetch('http://localhost:3000/allDestination')
+      },
+      {
+        path: 'destination/:id',
+        element: <Booking></Booking>
+      },
+      {
+        path: 'login',
+        element: <Login></Login>
+      },
+      {
+        path: 'register',
+        element: <Register></Register>
       }
     ]
   },

@@ -17,6 +17,7 @@ const Home = () => {
           people to explore the world, creating lasting connections and a more
           connected global community.
         </p>
+        <button className="btn">See Destination</button>
       </div>
 
       {/* slider */}
